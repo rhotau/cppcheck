@@ -10,6 +10,9 @@ def find_cppcheck_binary():
         "./build/bin/cppcheck",
         r".\bin\cppcheck.exe",
     ]
+    # When building out-of-tree, cppcheck might just be in PATH
+    for cur_path in os.environ['PATH'].split(os.pathsep):
+        possible_locations.append(cur_path+'/cppcheck')
     for location in possible_locations:
         if os.path.exists(location):
             break

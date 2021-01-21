@@ -1354,6 +1354,17 @@ typedef enum {
 void misra_18_8(int x) {
   int buf1[10];
   int buf2[sizeof(int)];
+  int buf3[10u];
+  int buf4[10ul];
+  int buf5[10ull];
+  int buf6[10l];
+  int buf7[10ll];
+  int buf8[0x4];
+  int buf9[0x4u];
+  int buf10[0x4ul];
+  int buf11[0x4ull];
+  int buf12[0x4l];
+  int buf13[0x4ll];
   int vla[x]; // 18.8
   static const unsigned char arr18_8_1[] = UNDEFINED_ID;
   static uint32_t enum_test_0[R18_8_ENUM_CONSTANT_0] = {0};
